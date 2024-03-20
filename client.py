@@ -133,10 +133,9 @@ def register(client):
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1 and button_sprite.get_rect(center=(400, 400)).collidepoint(event.pos):
+                if event.button == 1 and button_sprite.get_rect(center=(520, 420)).collidepoint(event.pos):
                     client.send("change".encode(FORMAT))
                     print("sent")
-
         # Отображение кнопки
         screen.fill((255, 255, 255))
         screen.blit(button_sprite, (400, 400))
