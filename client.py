@@ -65,7 +65,11 @@ def connectionSelection():
                 if (button_left_rect.collidepoint(event.pos)):
                     button_sound.play(0)
                     subprocess.Popen("python main.py", shell=True)
-                    SERVER = socket.gethostbyname(socket.gethostname())
+                    # Получение внешнего IP-адреса
+                    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+                        s.connect(('8.8.8.8', 80))
+                        SERVER = s.getsockname()[0]
+
                     client = connection((SERVER, PORT))
                     menu(client, SERVER)
                 if button_right_rect.collidepoint(event.pos):
@@ -168,7 +172,7 @@ def altushka(client):
                 sprite = pygame.transform.scale(sprite, (1000, 600))
                 print("change")
                 change_sound.play()
-        except socket.error as e:
+        except socket.error:
             pass
 
         # Отображение спрайта
