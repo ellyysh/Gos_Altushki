@@ -16,4 +16,4 @@
 <h2>Интерфейс:</h2>
 <img src="CODE/img/screen1.png" width="600" height="500"/>
 <img src="CODE/img/screen2.png" width="400" height="500"/>
-<img src="CODE/img/1.jpg" width="400" height="500"/>
+<img src="CODE/img/2.jpg" width="400" height="500"/>
